@@ -6,7 +6,7 @@ Instead of catching up with notes, I thought — why not build my own Resume Bui
  🔹 Live preview as you type <br>
  🔹 Multiple templates (Modern / Classic) <br>
  🔹 Custom fonts, colors & backgrounds <br>
- 🔹 Export your resume as a crisp PDF in one click <br><br>
+ 🔹 Export your resume as a crisp PDF in one click <br>
 
 This was also my first time deploying a website with Netlify — super smooth experience! 🚀<br>
 
