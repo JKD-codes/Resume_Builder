@@ -1,4 +1,4 @@
-<marquee># Resume/CV Builder</marquee>
+# Resume/CV Builder
 During an inter-college contest, I missed the lecture on “Resume making” at college.
 Instead of catching up with notes, I thought — why not build my own Resume Builder? 😅
 
