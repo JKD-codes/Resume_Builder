@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume / CV Builder</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Libre+Baskerville:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar / Form -->
+    <aside class="panel sidebar" aria-label="Resume input form">
+      <div class="header">
+        <div>
+          <div class="title">Resume / CV Builder</div>
+          <div class="small">Template-based • Exports to PDF</div>
+        </div>
+        <button id="resetBtn" class="btn" title="Reset form">Reset</button>
+      </div>
+
+      <div class="group">
+        <h3>Look & Feel</h3>
+        <div class="controls">
+          <select id="templateSelect" aria-label="Template">
+            <option value="modern" selected>Modern</option>
+            <option value="classic">Classic</option>
+          </select>
+          <input id="accentColor" type="color" value="#46a6ff" aria-label="Accent color" />
+        </div>
+        <label for="bgSelect">Background</label>
+        <select id="bgSelect">
+          <option value="white">White</option>
+          <option value="calm">Calm / Light</option>
+          <option value="softgray">Soft Gray</option>
+          <option value="mutedblue">Muted Blue</option>
+        </select>
+
+        <label for="fontSelect">Font</label>
+        <select id="fontSelect">
+          <option value="Inter">Inter (Sans)</option>
+          <option value="Lato">Lato (Sans)</option>
+          <option value="Libre Baskerville">Libre Baskerville (Serif)</option>
+        </select>
+      </div>
+
+      <div class="group">
+        <h3>Basics</h3>
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="Steve Jobs" />
+
+        <label for="role">Headline / Role</label>
+        <input id="role" type="text" placeholder="Software Engineer" />
+
+        <label for="summary">Summary</label>
+        <textarea id="summary" placeholder="1–3 lines about your impact and strengths."></textarea>
+
+        <div class="row">
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" placeholder="+1 555 123 4567" />
+          </div>
+        </div>
+        <label for="location">Location</label>
+        <input id="location" type="text" placeholder="City, Country" />
+
+        <label for="website">Website / Portfolio</label>
+        <input id="website" type="url" placeholder="https://…" />
+        <label for="linkedin">LinkedIn</label>
+        <input id="linkedin" type="url" placeholder="https://linkedin.com/in/…" />
+        <label for="github">GitHub</label>
+        <input id="github" type="url" placeholder="https://github.com/…" />
+      </div>
+
+      <div class="group">
+        <h3>Skills</h3>
+        <label for="skillsInput">Comma-separated</label>
+        <input id="skillsInput" type="text" placeholder="JavaScript, React, SQL" />
+        <div id="skillsChips" class="chiplist" aria-live="polite"></div>
+      </div>
+
+      <div class="group">
+        <br><h3>Experience</h3>
+        <div class="list" id="expList"></div>
+        <button id="addExp" class="btn" type="button">+ Add Experience</button>
+      </div>
+
+      <div class="group">
+        <h3>Education</h3>
+        <div class="list" id="eduList"></div>
+        <button id="addEdu" class="btn" type="button">+ Add Education</button>
+      </div>
+
+      <div class="actions">
+        <button id="printBtn" class="btn" type="button" title="Use system Print to save as PDF">Print to PDF</button>
+        <button id="pdfBtn" class="btn primary" type="button" title="Generate a PDF file">Download PDF</button>
+      </div>
+      <div class="small"><br>Tip: Use “Print to PDF” for crisp text, or “Download PDF” to save immediately from the browser.</div>
+    </aside>
+
+    <!-- Preview / Sheet -->
+    <main class="panel preview-wrap">
+      <div class="toolbar">
+        <div class="left">
+          <span class="small">Live Preview</span>
+        </div>
+        <div class="small">A4 • 1 page (auto-expands)</div>
+      </div>
+      <section class="canvas">
+        <article id="sheet" class="resume-sheet white">
+          <div class="sheet-inner modern" id="resume"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <!-- html2pdf (bundles html2canvas + jsPDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
